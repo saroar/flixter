@@ -65,3 +65,24 @@ h1, h2, h3, h4, h5, h6, .navbar {
 .booyah-box h2, .booyah-box h1 {
   margin:10px;
 }
+
+/* Login out and sign up */
+.devise-frosty {
+  background:rgba(0,0,0, 0.5);
+}
+
+.devise-frosty h1 {
+	font-family: "Helvetica Neue", Helvetica;
+	font-weight: 100;
+	text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+}
+
+.devise-frosty h2 {
+	font-family: "Helvetica Neue", Helvetica;
+	font-weight: 200;
+	text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+}
+
+.btn {
+	border-radius: 0;
+}
