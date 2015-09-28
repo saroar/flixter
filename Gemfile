@@ -14,6 +14,7 @@ gem 'simple_form', '~> 3.2.0'
 gem 'carrierwave', '~> 0.10.0'
 gem 'fog', '~> 1.34.0'
 gem 'figaro', '~> 1.1.1'
+gem 'mini_magick', '~> 4.3.3'
 
 group :doc do
   gem 'sdoc', require: false
