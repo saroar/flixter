@@ -10,7 +10,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # storage :file
   # storage :fog
   storage :aws
-  
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -26,7 +26,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :scale => [800, 350]
+  process :resize_to_fit => [800, 350]
   #
   # def scale(width, height)
   #   # do something
