@@ -15,5 +15,4 @@
 //= require jquery-ui
 //= require bootstrap-sprockets
 // Loads all Bootstrap javascripts
-//= require bootstrap
 //= require_tree .
