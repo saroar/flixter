@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def enrolled_in?(course)
-    return enrolled_courses.include?(course)
+    return enrolled_courses.include?(course) || course.user_id == self.id
   end
 end
