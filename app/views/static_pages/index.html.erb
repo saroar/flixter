@@ -2,26 +2,49 @@
 	<br />
 	<div class="frosty col-xs-10 col-xs-offset-1 text-center">
 		<br />
-		<h1>Cool Keep it up</h1>
+		<h1>If you have dreams Start now </h1>
 		<br />
-		<h2>Never giveup u r doing good!!!</h2>
+		<h2>There Has Never Been a Better Time to Be a Developer</h2>
 		<br />
-		<%= link_to 'Learn More', "#", :class => 'btn btn-success' %>
+		<%= link_to 'Start Learning..', courses_path, :class => 'btn btn-success' %>
 		<br /><br />
 	</div>
 </div>
 
 <br />
-<div class="col-xs-10 col-xs-offset-a features text-center" >
-	<div class="col-sm-4">
-		<h3>Feature 1</h3>
+<div class="col-xs-12  text-center" >
+	<!-- <div class="col-md-4">
+	  <h3>Great Job</h3>
+	    <%= image_tag 'alexey.png', :class => 'img-responsive' %>
 	</div>
 
-	<div class="col-sm-4">
-		<h3>Feature 2</h3>
+	<div class="col-md-4">
+	  <h3>Strongly Recommend </h3>
+	    <%= image_tag 'kateya.png', :class => 'img-responsive' %>
 	</div>
 
-	<div class="col-sm-4">
-		<h3>Feature 3</h3>
-	</div>
+	<div class="col-md-4">
+	  <h3>Helped in learning AWS</h3>
+	    <%= image_tag 'jimmy.png', :class => 'img-responsive' %>
+	</div> -->
+
+  <% @courses.each do |course| %>
+    <div class="col-md-4 ">
+      <%= course.title %>
+
+      <h2 class="text-center">
+        <% link_to course.title, course_path(course) %>
+      </h2>
+
+      <%= link_to course_path(course) do %>
+        <%= image_tag course.image, :class => 'img-responsive' %>
+      <% end %>
+      <br />
+
+      <div class="text-center">
+        <%= link_to 'More Details...', course_path(course), :class => 'btn btn-primary btn-large' %>
+      </div>
+      <br class="clr" />
+    </div>
+  <% end %>
 </div>

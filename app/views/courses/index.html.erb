@@ -4,19 +4,23 @@
 	<h1 class="text-center"> Learn somthing today </h1>
 	<hr />
 
-	<% @courses.each do |course| %>
+  <% @courses.each do |course| %>
+    <div class="col-md-4 ">
+      <%= course.title %>
 
-		<h2 class="text-center">
-			<% link_to course.title, course_path(course) %>
-			<%= image_tag course.image, :class => 'img-responsive' %>
-		</h2>
-		<br />
-		<div class="col-sm-8 col-xs-12">
-			<%= course.description %>
-		</div>
-		<div class="col-sm-4 col-xs-12 text-center">
-			<%= link_to 'More Details...', course_path(course), :class => 'btn btn-primary btn-large' %>
-		</div>
-		<br class="clr" />
-	<% end %>
+      <h2 class="text-center">
+        <% link_to course.title, course_path(course) %>
+      </h2>
+
+      <%= link_to course_path(course) do %>
+        <%= image_tag course.image, :class => 'img-responsive' %>
+      <% end %>
+      <br />
+
+      <div class="text-center">
+        <%= link_to 'More Details...', course_path(course), :class => 'btn btn-primary btn-large' %>
+      </div>
+      <br class="clr" />
+    </div>
+  <% end %>
 </div>
