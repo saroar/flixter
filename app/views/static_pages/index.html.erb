@@ -27,15 +27,14 @@
 	  <h3>Helped in learning AWS</h3>
 	    <%= image_tag 'jimmy.png', :class => 'img-responsive' %>
 	</div> -->
-
+  <h3>Most recent Courses</h3>
+  <br />
   <% @courses.each do |course| %>
     <div class="col-md-4 ">
-      <%= course.title %>
-
-      <h2 class="text-center">
-        <% link_to course.title, course_path(course) %>
+      <h2>
+        <%= link_to course.title, course_path(course) %>
       </h2>
-
+      <br />
       <%= link_to course_path(course) do %>
         <%= image_tag course.image, :class => 'img-responsive' %>
       <% end %>
