@@ -20,7 +20,7 @@ gem 'stripe', '~> 1.27.2'
 gem 'ranked-model', '~> 0.4.0'
 gem 'jquery-ui-rails', '~> 5.0.5'
 gem 'will_paginate', '~> 3.0.7'
-
+gem 'rubocop', '~> 0.34.2'
 
 group :doc do
   gem 'sdoc', require: false
