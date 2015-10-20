@@ -32,6 +32,16 @@
 <div class="col-xs-10 col-xs-offset-1">
 
   <h1>Current Discussions</h1>
+
+  <% @lesson.comments.each do |comment| %>
+      <div>
+        <blockquote>
+          <%= comment.message %>
+          <small><%= comment.user.email %></small>
+        </blockquote>
+      </div>
+  <% end %>
+
   <br />
   <%= simple_form_for @comment, :url => lesson_comments_path(@lesson) do |f| %>
       <%= f.input :message %>
