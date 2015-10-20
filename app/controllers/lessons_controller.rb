@@ -2,6 +2,7 @@ class LessonsController < ApplicationController
   before_action :authenticate_user!
   before_action :require_authorized_for_lesson, :only => [:show]
 
+
   def show
     @lesson = Lesson.find(params[:id])
     @comment = Comment.new

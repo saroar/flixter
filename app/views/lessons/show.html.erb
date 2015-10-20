@@ -34,16 +34,15 @@
   <h1>Current Discussions</h1>
 
   <% @lesson.comments.each do |comment| %>
-      <div>
-        <blockquote>
-          <%= comment.message %>
-          <small><%= comment.user.email %></small>
-        </blockquote>
-      </div>
+      <br />
+      <h3><%= link_to comment.title, comment_path %></h3>
+      <small><%= comment.user.email %></small> <br />
   <% end %>
 
   <br />
   <%= simple_form_for @comment, :url => lesson_comments_path(@lesson) do |f| %>
+      <br />
+      <%= f.input :title %>
       <%= f.input :message %>
       <br />
       <%= f.submit "Add a Comment", :class => 'btn btn-primary' %>
