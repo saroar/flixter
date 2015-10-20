@@ -3,6 +3,7 @@ class LessonsController < ApplicationController
   before_action :require_authorized_for_lesson, :only => [:show]
 
   def show
+    @comment = Comment.new
   end
 
   private
