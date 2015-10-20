@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Rails flixter: development" uuid="cf8d11bd-1b76-4c03-bd2e-68708930bc0d">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails flixter: test" uuid="63818deb-cac0-4854-a906-5559263f036d">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails flixter: production" uuid="ecb20737-2d4b-4a28-8e22-443554b5496f">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

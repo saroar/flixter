@@ -1,6 +1,6 @@
 class Lesson < ActiveRecord::Base
   belongs_to :section
-  #has_many :lessons
+  has_many :comments
 
   validates :title, :presence => true
   validates :subtitle, :presence => true

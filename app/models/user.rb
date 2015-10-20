@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :comments
   has_many :courses
   has_many :enrollments
   has_many :enrolled_courses, :through => :enrollments, :source => :course
