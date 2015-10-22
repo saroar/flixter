@@ -8,7 +8,9 @@ Flixter::Application.routes.draw do
     resources :enrollments, :only => :create
   end
   resources :lessons, :only => [:show] do
-    resources :comments, :only => [:create, :show]
+    resources :comments, :only => [:create, :show] do
+      resources :sub_comments, :only => [:create, :show]
+    end
   end
   namespace :instructor do
     resources :lessons, :only => [:update]
