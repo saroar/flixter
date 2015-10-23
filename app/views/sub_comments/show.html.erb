@@ -6,17 +6,17 @@
   <h3><%= @comment.message %></h3>
   <%= @comment.user.email %>
 
-<br class="clr" />
-<br /><br />
+  <br class="clr" />
+  <br /><br />
   <h3><%= @sub_comment.message %></h3><br />
 
   <% if @comment.can_edit?(current_user) %>
-    <h1>Current Discussions</h1>
-      <%= simple_form_for @sub_comment, :url => comment_sub_comments_path(@comment) do |f| %>
+      <h1>Current Discussions</h1>
+      <%= simple_form_for @sub_comment, :url => lesson_comment_sub_comments_path(@lesson, @comment) do |f| %>
           <%= f.input :message %><br />
           <%= f.submit "Post a Reply", :class => 'btn btn-primary' %>
       <% end %>
   <% end%>
   <br /><br />
-  <%= link_to "Back to Lesson", "#" %>
+  <%= link_to "Back to Lesson", lesson_path(@lesson.id) %>
 </div>

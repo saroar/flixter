@@ -3,14 +3,15 @@ Flixter::Application.routes.draw do
   resource :dashboard, :only => [:show]
   root 'static_pages#index'
   get 'privacy', :to => 'static_pages#privacy'
-  resources :comments, :only => :show
+  resources :comments, :only => [:show] do
+    resources :sub_comments, :only => [:create, :show]
+  end
+  resources :sub_comments, :only =>  :show
   resources :courses, :only => [:index, :show] do
     resources :enrollments, :only => :create
   end
   resources :lessons, :only => [:show] do
-    resources :comments, :only => [:create, :show] do
-      resources :sub_comments, :only => [:create, :show]
-    end
+    resources :comments, :only => [:create, :show]
   end
   namespace :instructor do
     resources :lessons, :only => [:update]

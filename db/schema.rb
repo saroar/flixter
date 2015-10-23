@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022103523) do
+ActiveRecord::Schema.define(version: 20151022201207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,17 @@ ActiveRecord::Schema.define(version: 20151022103523) do
   end
 
   add_index "sections", ["row_order"], name: "index_sections_on_row_order", using: :btree
+
+  create_table "sub_comments", force: true do |t|
+    t.text     "message"
+    t.integer  "user_id"
+    t.integer  "comment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sub_comments", ["comment_id"], name: "index_sub_comments_on_comment_id", using: :btree
+  add_index "sub_comments", ["user_id", "comment_id"], name: "index_sub_comments_on_user_id_and_comment_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",        null: false
