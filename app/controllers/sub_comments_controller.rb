@@ -2,13 +2,15 @@ class SubCommentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
+    @lesson = Lesson.find(params[:lesson_id])
     @comment = Comment.find(params[:comment_id])
     @comment.sub_comments.create(sub_comment_params.merge(:user => current_user))
-    redirect_to comment_path(@comment)
+    redirect_to lesson_comment_path(@lesson, @comment)
   end
 
   def show
-    @comment = Comment.find(params[:comment_id])
+    @lesson = Lesson.find(params[:lesson_id])
+    @sub_comment = SubComment.find(params[:id])
   end
 
   private

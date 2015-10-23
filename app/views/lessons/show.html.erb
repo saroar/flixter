@@ -35,7 +35,7 @@
 
   <% @lesson.comments.each do |comment| %>
       <br />
-      <h3><%= link_to comment.title, comment_path(lesson_id: @lesson.id, id: comment.id) %></h3>
+      <h3><%= link_to comment.title, lesson_comment_path(lesson_id: @lesson.id, id: comment.id) %></h3>
       <small><%= comment.user.email %></small> <br />
   <% end %>
 
