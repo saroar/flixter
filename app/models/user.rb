@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
   def enrolled_in?(course)
     return enrolled_courses.include?(course) || course.user_id == self.id
   end
+
+  def full_name
+    "#{first_name.capitalize}" + " " + "#{last_name}"
+  end
 end
