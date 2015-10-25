@@ -29,16 +29,20 @@
 </div>
 <br class="clr" />
 <br /> <br />
-<div class="col-xs-10 col-xs-offset-1">
 
-  <h1>Start New Discussions</h1>
+<div class="discussion col-xs-12">
+  <div class="discussion col-xs-10 col-xs-offset-1">
+    <br /> <br />
+    <h1>Start New Discussions</h1>
 
-  <% @lesson.comments.each do |comment| %>
-      <br />
-      <h3><%= link_to comment.title, lesson_comment_path(lesson_id: @lesson.id, id: comment.id) %></h3>
-      <small><%= comment.user.full_name %></small> <br />
-  <% end %>
+    <% @lesson.comments.each do |comment| %>
+        <br />
+        <h3><%= link_to comment.title, lesson_comment_path(lesson_id: @lesson.id, id: comment.id) %></h3>
+        <small><%= comment.user.full_name %></small> <br />
+    <% end %>
 
-  <br />
-    <%= render 'comments/form' %>
+    <br />
+    <%= render 'comments/form' %><br />
+  </div>
 </div>
+

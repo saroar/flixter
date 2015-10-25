@@ -1,29 +1,42 @@
-<br /><br />
 
-<div class="col-xs-10 col-xs-offset-1">
-  <br /><br /><br />
-  <h3><%= @comment.title %></h3>
-  <h3><%= @comment.message %></h3>
-  <%= @comment.user.email %>
+<div class="discussion col-xs-12">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+    <br /><br /><br />
+    <h3><%= @comment.title %></h3><br /> <br />
+    <p>
+        <%= @comment.user.full_name %> &nbsp; &nbsp;
+        <%= @comment.created_at.strftime("%A, %b %d %Y")%>
+        <br /><br />
+    </p>
 
-<br class="clr" />
-<br /><br />
-  <% @comment.sub_comments.each do |sub_comment| %>
-      <br />
-      <h3><%= sub_comment.message %></h3>
-      <br />
-  <% end %>
+    <h3><%= @comment.message %></h3>
 
+    <hr />
+    <br class="clr" />
+    <br /><br />
+    <% @comment.sub_comments.each do |sub_comment| %>
+        <hr />
+        <br /> <br />
+        <p>
+          <%= sub_comment.user.full_name %> &nbsp; &nbsp;
+          <%= sub_comment.created_at.strftime("%A, %b %d %Y")%>
+        </p> <br/> <br />
+        <h3><%= sub_comment.message %></h3>
+        <br />
+    <% end %>
 
-
-  <% if @comment.can_edit?(current_user) %>
-    <h1>Current Discussions</h1>
-      <%= simple_form_for @sub_comment, :url => lesson_comment_sub_comments_path(@lesson, @comment) do |f| %>
-          <%= f.input :message %><br />
-          <%= f.submit "Post a Reply", :class => 'btn btn-primary' %>
-      <% end %>
-  <% end%>
-  <br /><br />
-  <%= link_to "Back to Lesson", lesson_path(@lesson) %>
+    <br /><br /><br />
+    <% if @comment.can_edit?(current_user) %>
+        <hr />
+        <h1>Current Discussions</h1> <br />
+        <%= simple_form_for @sub_comment, :url => lesson_comment_sub_comments_path(@lesson, @comment) do |f| %>
+            <%= f.input :message %> <br />
+            <%= f.submit "Post a Reply", :class => 'btn btn-primary' %>
+        <% end %>
+    <% end%>
+    <br /><br />
+    <%= link_to "Back to Lesson", lesson_path(@lesson) %> <br/> <br />
+  </div>
 </div>
-</div>
+
+

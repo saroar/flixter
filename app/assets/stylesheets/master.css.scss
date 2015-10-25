@@ -59,7 +59,7 @@ body {
 
 body {
 	background: url('bg.png');
-	  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 }
 
 .hero {
@@ -215,4 +215,16 @@ $footer-height-mobile: 200px;
   #footer .social {
     margin-top: 10px;
   }
+}
+
+.discussion, body.comments {
+  background-color: #292829;
+  color: white;
+  a {
+    color: white;
+    font-weight: 600;
+    text-decoration: underline;
+    color: white;
+  }
+
 }
