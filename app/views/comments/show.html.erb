@@ -25,7 +25,7 @@
     <% end %>
 
     <br /><br /><br />
-    <% if @comment.can_edit?(current_user) %>
+    <% if @comment.can_commnet?(current_user) %>
         <hr />
         <h1>Current Discussions</h1> <br />
         <%= simple_form_for @sub_comment, :url => lesson_comment_sub_comments_path(@lesson, @comment) do |f| %>

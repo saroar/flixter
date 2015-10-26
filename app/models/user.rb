@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_and_belongs_to_many :roles
   has_many :comments
   has_many :sub_comments
   has_many :courses
@@ -15,5 +16,9 @@ class User < ActiveRecord::Base
 
   def full_name
     "#{first_name.capitalize}" + " " + "#{last_name}"
+  end
+
+  def clearance_levels
+    roles.pluck(:admin, :teacher)
   end
 end

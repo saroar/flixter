@@ -1,5 +1,6 @@
 class SubCommentsController < ApplicationController
   before_action :authenticate_user!
+  let :teacher, :create
 
   def create
     @lesson = Lesson.find(params[:lesson_id])

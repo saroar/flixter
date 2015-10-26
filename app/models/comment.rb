@@ -9,4 +9,8 @@ class Comment < ActiveRecord::Base
   def can_edit?(current_user)
     current_user.id == user_id  || !current_user.role == 'student'
   end
+
+  def can_commnet?(current_user)
+    current_user.id == user_id  || !current_user.role == 'student' || current_user.role == 'teacher'
+  end
 end
