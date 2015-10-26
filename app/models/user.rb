@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
   has_many :comments
+  has_many :lessons
   has_many :sub_comments
   has_many :courses
   has_many :enrollments
