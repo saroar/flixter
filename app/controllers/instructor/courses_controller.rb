@@ -3,7 +3,11 @@ class Instructor::CoursesController < ApplicationController
   before_action :require_authorized_for_current_course, :only => [:show]
 
   def new
-    @course = Course.new
+    if current_user.role == 'teacher'
+      @course = Course.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create
