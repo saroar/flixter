@@ -21,7 +21,7 @@ gem 'ranked-model', '~> 0.4.0'
 gem 'jquery-ui-rails', '~> 5.0.5'
 gem 'will_paginate', '~> 3.0.7'
 gem 'action_access', '~> 0.1.0'
-
+gem 'rails_12factor', group: :production
 
 group :doc do
   gem 'sdoc', require: false
