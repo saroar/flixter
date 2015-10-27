@@ -16,4 +16,12 @@ class NotificationMailer < ActionMailer::Base
     mail(to: @comment_owner.email,
          subject: "A comment has been added to #{@comment.title} ")
   end
+
+  def course_enrollment(enrollment)
+    @course = enrollment.course
+    @course_owner = @course.user
+
+    mail(to: @course_owner.email,
+         subject: "Your course was enroll #{@course.title} ")
+  end
 end
