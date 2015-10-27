@@ -18,7 +18,6 @@ Flixter::Application.configure do
       :domain =>         'https://www.rubyonrails.club',
       :authentication => :plain
   }
-  ActionMailer::Base.delivery_method = :smtp
 
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.default_url_options = { :host => 'flixter-alif.herokuapp.com', :protocol => 'https' }
