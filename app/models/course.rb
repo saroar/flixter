@@ -16,4 +16,8 @@ class Course < ActiveRecord::Base
  def premium?
   ! free?
  end
+
+ def send_enrollment_email
+  NotificationMailer.course_enrollment(self).deliver
+ end
 end
