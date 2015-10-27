@@ -19,7 +19,6 @@ Flixter::Application.configure do
       :authentication => :plain
   }
   ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base default charset: "utf-8"
 
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.default_url_options = { :host => 'flixter-alif.herokuapp.com', :protocol => 'https' }
