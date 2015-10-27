@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  default from: "alif@gmail.com"
+  default from: "saroar9@gmail.com"
 
   def comment_added(comment)
     @lesson = comment.lesson
