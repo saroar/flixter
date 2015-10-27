@@ -1,14 +1,34 @@
 Flixter::Application.configure do
 
+  # ActionMailer::Base.smtp_settings = {
+  #     :port           => ENV['MAILGUN_SMTP_PORT'],
+  #     :address        => ENV['MAILGUN_SMTP_SERVER'],
+  #     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+  #     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+  #     :domain         => 'https://www.rubyonrails.club/',
+  #     :authentication => :plain,
+  # }
+  # ActionMailer::Base.delivery_method = :smtp
+
   ActionMailer::Base.smtp_settings = {
+<<<<<<< HEAD
       :port           => ENV['MAILGUN_SMTP_PORT'],
       :address        => ENV['MAILGUN_SMTP_SERVER'],
       :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
       :password       => ENV['MAILGUN_SMTP_PASSWORD'],
       :domain         => 'https://www.rubyonrails.club',
       :authentication => :plain,
+=======
+      :port =>           '587',
+      :address =>        'smtp.mandrillapp.com',
+      :user_name =>      ENV['MANDRILL_USERNAME'],
+      :password =>       ENV['MANDRILL_APIKEY'],
+      :domain =>         'https://www.rubyonrails.club',
+      :authentication => :plain
+>>>>>>> mailchimp
   }
   ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base default charset: "utf-8"
 
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.default_url_options = { :host => 'flixter-alif.herokuapp.com', :protocol => 'https' }
