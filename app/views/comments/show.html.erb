@@ -28,13 +28,13 @@
     <% if @comment.can_commnet?(current_user) %>
         <hr />
         <h1>Current Discussions</h1> <br />
-        <%= simple_form_for @sub_comment, :url => lesson_comment_sub_comments_path(@lesson, @comment) do |f| %>
+        <%= simple_form_for @sub_comment, :url => comment_sub_comments_path(@comment) do |f| %>
             <%= f.input :message %> <br />
             <%= f.submit "Post a Reply", :class => 'btn btn-primary' %>
         <% end %>
     <% end%>
     <br /><br />
-    <%= link_to "Back to Lesson", lesson_path(@lesson) %> <br/> <br />
+    <%= link_to "Back to Lesson", lesson_path(lesson_id: @lesson) %> <br/> <br />
   </div>
 </div>
 

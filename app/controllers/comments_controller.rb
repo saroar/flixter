@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
-
   def create
     @lesson = Lesson.find(params[:lesson_id])
     @lesson.comments.create(comment_params.merge(:user => current_user))
@@ -9,7 +8,6 @@ class CommentsController < ApplicationController
   end
 
   def show
-    @lesson = Lesson.find(params[:lesson_id])
     @comment = Comment.find(params[:id])
     @sub_comment = SubComment.new
   end
