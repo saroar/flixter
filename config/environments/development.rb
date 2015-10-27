@@ -2,22 +2,12 @@ Flixter::Application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-<<<<<<< HEAD
-      address: "smtp.gmail.com",
-      port: 587,
-      domain: "http://localhost:3030/",
-      authentication: "plain",
-      enable_starttls_auto: true,
-      user_name: ENV['GMAIL_ADDRESS'],
-      password: ENV['GMAIL_PASSWORD']
-=======
       address: "smtp.mandrillapp.com",
       port: 587,
       authentication: "login",
       enable_starttls_auto: true,
       user_name: ENV['MANDRILL_ADDRESS'],
       password: ENV['MANDRILL_PASSWORD']
->>>>>>> mailchimp
   }
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3030 }

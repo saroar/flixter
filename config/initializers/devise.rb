@@ -12,11 +12,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-<<<<<<< HEAD
-  config.mailer_sender = 'Saroar At RubyOnRailsClub <saroar9@gmail.com>'
-=======
   config.mailer_sender = 'Saroar At RoRCLUB <saroar9@gmail.com>'
->>>>>>> mailchimp
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
