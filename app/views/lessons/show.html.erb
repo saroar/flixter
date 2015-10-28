@@ -37,7 +37,7 @@
 
     <% @lesson.comments.each do |comment| %>
         <br />
-        <h3><%= link_to comment.title, comment_path(comment) %></h3>
+        <h3><%= link_to comment.title, comment_path(lesson_id: @lesson.id, id: comment.id) %></h3>
         <small><%= comment.user.full_name %> &nbsp; &nbsp;<%= comment.created_at.strftime("%A, %b %d %Y")%></small> <br />
     <% end %>
 

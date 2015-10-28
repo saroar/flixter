@@ -78,14 +78,13 @@ ActiveRecord::Schema.define(version: 20151026172835) do
   create_table "sub_comments", force: true do |t|
     t.text     "message"
     t.integer  "user_id"
-    t.integer  "lesson_id"
     t.integer  "comment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "sub_comments", ["comment_id"], name: "index_sub_comments_on_comment_id", using: :btree
-  add_index "sub_comments", ["user_id", "lesson_id", "comment_id"], name: "index_sub_comments_on_user_id_and_lesson_id_and_comment_id", using: :btree
+  add_index "sub_comments", ["user_id", "comment_id"], name: "index_sub_comments_on_user_id_and_comment_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",        null: false
