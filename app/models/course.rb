@@ -2,7 +2,6 @@ class Course < ActiveRecord::Base
  belongs_to :user
  has_many :sections
  has_many :enrollments
- after_create :send_enrollment_email
  validates :title, :presence => true
  validates :description, :presence => true
  validates :cost, :presence => true, :numericality => { :greater_than_or_equal_to => 0 }
@@ -15,9 +14,5 @@ class Course < ActiveRecord::Base
 
  def premium?
   ! free?
- end
-
- def send_enrollment_email
-  NotificationMailer.course_enrollment(self).deliver
  end
 end

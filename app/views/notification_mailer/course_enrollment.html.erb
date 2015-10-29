@@ -1,7 +1,9 @@
 <p>Hey There!</p>
 <p>
-  Congrats!  <b>Your  Deploying Ruby on Rails Application course was enrolled <%= @course.title %></b>.
+  Congrats!  <b>Your  <%= @course.title %> course was enrolled by </b>
+  <h3><%= @course.user.full_name %></h3>
 </p>
 
-Alif,<br />
 Saroar
+<br />
+<b>RoR Club<b>

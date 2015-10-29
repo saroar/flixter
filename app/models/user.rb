@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :courses
   has_many :enrollments
   has_many :enrolled_courses, :through => :enrollments, :source => :course
+  after_create :send_comment_email
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -21,5 +22,9 @@ class User < ActiveRecord::Base
 
   def clearance_levels
     roles.pluck(:admin, :teacher)
+  end
+
+  def send_comment_email
+    NotificationMailer.sub_comment_added(self).deliver
   end
 end

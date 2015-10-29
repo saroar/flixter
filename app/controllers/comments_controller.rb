@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
   end
 
   def show
+
     @comment = Comment.find(params[:id])
     @sub_comment = SubComment.new
   end

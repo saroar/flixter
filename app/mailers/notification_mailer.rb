@@ -22,6 +22,14 @@ class NotificationMailer < ActionMailer::Base
     @course_owner = @course.user
 
     mail(to: @course_owner.email,
-         subject: "Your course was enroll #{@course.title} ")
+         subject: "Your #{@course.title} course enrolled")
+  end
+
+  def course_enrollmented_by_student(student_enrollment)
+    @course = student_enrollment.course
+    @course_owner = student_enrollment.user
+
+    mail(to: @course_owner.email,
+         subject: "Congratulation  enrollend #{@course.title} ")
   end
 end
